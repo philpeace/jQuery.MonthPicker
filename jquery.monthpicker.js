@@ -14,7 +14,7 @@
 */
 
 (function ($) {
-    $.fn.monthPicker = function () {
+    $.fn.monthPicker = function (options) {
         return this.each(function () {
             var settings = {
                 'numberOfYears': 10,
@@ -22,7 +22,11 @@
                 'dayOfMonth': 1,
                 'changed': $.noop
             };
-
+			
+            if (options) {
+                $.extend(settings, options);
+            }
+			
             var input = $(this);
             input.hide();
             var id = input.attr('id');

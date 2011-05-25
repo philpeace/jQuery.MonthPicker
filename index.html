@@ -15,7 +15,14 @@
 		</header>
 		<div id="main" role="main">
 			<form action="">
-				<input type="text" id="month" value="15/10/2011" />
+				<p>
+					<label for="month-default">Default behavior</label>
+					<input type="text" id="month-default" value="15/10/2011" />
+				</p>
+				<p>
+					<label for="month-default">Default behavior</label>
+					<input type="text" id="month-settings" value="15/10/2011" />
+				</p>
 			</form>
 		</div>
 		<footer>
@@ -23,14 +30,19 @@
 		</footer>
 	</div>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
 	<script src="jquery.monthpicker.js"></script>
 	<script src="shared.prototype.js"></script>
 	
 	<script type="text/javascript">
 	
 	$(document).ready(function() {
-		$('#month').monthPicker();
+		$('#month-default').monthPicker();
+		$('#month-settings').monthPicker({
+			'numberOfYears': 5,
+			'startYearOffset': -5,
+			'dayOfMonth': 20
+		});
 	});
 	
 	</script>
